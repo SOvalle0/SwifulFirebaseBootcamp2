@@ -7,31 +7,6 @@
 
 import SwiftUI
 
-final class SignInEmailViewModel: ObservableObject {
-    @Published var email = ""
-    @Published var password = ""
-    
-    func signUp() async throws {
-        guard !email.isEmpty, !password.isEmpty else {
-            print("Email or password found")
-            return
-        }
-        
-        try await AuthenticationManager.shared.createUser(email: email, password: password)
-      
-    }
-    
-    func signIn() async throws {
-        guard !email.isEmpty, !password.isEmpty else {
-            print("Email or password found")
-            return
-        }
-        
-        try await AuthenticationManager.shared.signInUser(email: email, password: password)
-      
-    }
-}
-
 struct SignInEmailView: View {
     
     @StateObject private var viewModel = SignInEmailViewModel()
@@ -39,14 +14,16 @@ struct SignInEmailView: View {
     
     var body: some View {
         VStack {
-            TextField("Email", text: $viewModel.email)
+            TextField("Email...", text: $viewModel.email)
                 .padding()
-                .background(Color(.secondarySystemBackground))
+                .background(Color.gray.opacity(0.4))
                 .cornerRadius(10)
-            SecureField("Password", text: $viewModel.password)
+            
+            SecureField("Password...", text: $viewModel.password)
                 .padding()
-                .background(Color(.secondarySystemBackground))
+                .background(Color.gray.opacity(0.4))
                 .cornerRadius(10)
+
             Button {
                 Task {
                     do {
@@ -56,6 +33,7 @@ struct SignInEmailView: View {
                     } catch {
                         print(error)
                     }
+                    
                     do {
                         try await viewModel.signIn()
                         showSignInView = false
@@ -73,10 +51,11 @@ struct SignInEmailView: View {
                     .background(Color.blue)
                     .cornerRadius(10)
             }
+            
             Spacer()
         }
         .padding()
-        .navigationTitle("Sign In")
+        .navigationTitle("Sign In With Email")
     }
 }
 

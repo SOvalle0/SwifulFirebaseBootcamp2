@@ -1,38 +1,34 @@
 import SwiftUI
 import Firebase
-import FirebaseAnalyticsSwift
-import FirebaseAnalytics
-
-
 
 @main
-struct YourApp: App {
+struct SwiftfulFirebaseBootcampApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
         WindowGroup {
-          RootView()
+//            RootView()
+//            CrashView()
+//            PerformanceView()
+            AnalyticsView()
         }
     }
-    ///d
 }
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        FirebaseApp.configure() // Inicializar Firebase
-        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+
         return true
     }
-}
-
-func applicationDidBecomeActive() {
-    logEvent()
-}
-
-// Que muestre un evento en la consola
-func logEvent() {
-    Analytics.logEvent("test_event", parameters: nil)
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        
+    }
 }
