@@ -1,17 +1,38 @@
-//
-//  SwifulFirebaseBootcamp2App.swift
-//  SwifulFirebaseBootcamp2
-//
-//  Created by Macbook Air on 18-05-24.
-//
-
 import SwiftUI
+import Firebase
+import FirebaseAnalyticsSwift
+import FirebaseAnalytics
+
+
 
 @main
-struct SwifulFirebaseBootcamp2App: App {
+struct YourApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+          RootView()
         }
     }
+    ///d
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+        FirebaseApp.configure() // Inicializar Firebase
+        
+        return true
+    }
+}
+
+func applicationDidBecomeActive() {
+    logEvent()
+}
+
+// Que muestre un evento en la consola
+func logEvent() {
+    Analytics.logEvent("test_event", parameters: nil)
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>368893867088-4kh1usn8f12d5hd2i2ukbgf5obpel2cg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.368893867088-4kh1usn8f12d5hd2i2ukbgf5obpel2cg</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD2RacXcp-p65RbT2lM6wGV6oSt0nNlexc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>368893867088</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.sebastianovalle.SwifulFirebaseBootcamp2</string>
+	<key>PROJECT_ID</key>
+	<string>swifulfirebasebootcamp2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>swifulfirebasebootcamp2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:368893867088:ios:81f9ab052cfd09d8c98d55</string>
+</dict>
+</plist>
